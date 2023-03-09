@@ -1,20 +1,17 @@
-import { MenuOption } from "../header/header";
-import "./nav.menu.scss";
+import { MenuOption } from "../../app/app";
 
-export type MenuProps = {
-  options: MenuOption[];
+type MenuProps = {
+  menuOptions: MenuOption[];
 };
 
-export function NavMenu({ options }: MenuProps) {
+export function NavMenu({ menuOptions }: MenuProps) {
   return (
-    <nav className="menu-container">
-      <ul className="menu">
-        {options.map((item: MenuOption) => (
-          <li key={item.label} className="menu__option">
-            <Link to={item.path}>{item.label}</Link>
-          </li>
-        ))}
-      </ul>
-    </nav>
+    <ul className="menu">
+      {menuOptions.map((option) => (
+        <li key={option.label}>
+          <a href={option.path}>{option.label}</a>
+        </li>
+      ))}
+    </ul>
   );
 }

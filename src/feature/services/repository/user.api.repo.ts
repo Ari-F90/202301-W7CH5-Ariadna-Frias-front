@@ -28,7 +28,7 @@ export class UserApiRepo implements UserApiRepoStructure {
     if (!resp.ok)
       throw new Error("Error HTTP " + resp.status + ". " + resp.statusText);
 
-    const user = await resp.json();
+    const user = (await resp.json()) as ServerResp;
 
     return user;
   }
