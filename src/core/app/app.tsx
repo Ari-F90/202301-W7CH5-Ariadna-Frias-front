@@ -1,6 +1,5 @@
 import { AppRouter } from "../components/app.router/app.router";
 import { Header } from "../components/header/header";
-import { NavMenu } from "../components/nav/nav";
 
 export type MenuOption = {
   label: string;
